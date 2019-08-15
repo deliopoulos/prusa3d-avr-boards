@@ -41,3 +41,31 @@ prusa_mm_control.build.board=AVR_prusa_mm_control
 prusa_mm_control.build.core=arduino:arduino
 prusa_mm_control.build.variant=prusa_mm_control
 prusa_mm_control.build.extra_flags={build.usb_flags}
+
+################################################################################
+################################# Einsy Rambo ##################################
+################################################################################
+
+rambo.name=Einsy Rambo
+
+rambo.vid.0=0x27b1
+rambo.pid.0=0x0001
+
+rambo.upload.tool=arduino:avrdude
+rambo.upload.protocol=wiring
+rambo.upload.maximum_size=253952
+rambo.upload.speed=115200
+
+rambo.bootloader.tool=avrdude
+rambo.bootloader.low_fuses=0xFF
+rambo.bootloader.high_fuses=0xD8
+rambo.bootloader.extended_fuses=0xFD
+rambo.bootloader.file=stk500v2-prusa/stk500boot_v2_mega2560.hex
+rambo.bootloader.unlock_bits=0x3F
+rambo.bootloader.lock_bits=0x0F
+
+rambo.build.mcu=atmega2560
+rambo.build.f_cpu=16000000L
+rambo.build.board=AVR_RAMBO
+rambo.build.core=arduino:arduino
+rambo.build.variant=rambo
