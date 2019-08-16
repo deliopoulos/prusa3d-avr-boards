@@ -67,5 +67,5 @@ rambo.bootloader.lock_bits=0x0F
 rambo.build.mcu=atmega2560
 rambo.build.f_cpu=16000000L
 rambo.build.board=AVR_RAMBO
-rambo.build.core=arduino:arduino
+rambo.build.core=rambo
 rambo.build.variant=rambo
