@@ -2,7 +2,7 @@
 #  Prusa3D Arduino IDE Module makefile.
 #
 PACKAGE_NAME := prusa3d
-PACKAGE_VERSION := 1.0.0
+PACKAGE_VERSION := 1.0.1
 ROOT_PATH := .
 BUILD_DIR := ../$(PACKAGE_NAME)-release
 SOURCE_FOLDER := $(ROOT_PATH)/$(PACKAGE_NAME)
@@ -15,10 +15,13 @@ EXTRA_FILES := avrdude.conf \
 BOOTLOADERS := caterina/*.hex \
 	stk500v2-prusa/*.hex
 
+CORES := rambo/*
+
 VARIANTS := prusa_mm_control/* \
 	rambo/*
 
 SUBDIRS := $(addprefix bootloaders/,$(BOOTLOADERS))
+SUBDIRS += $(addprefix cores/,$(CORES))
 SUBDIRS += $(addprefix variants/,$(VARIANTS))
 
 
