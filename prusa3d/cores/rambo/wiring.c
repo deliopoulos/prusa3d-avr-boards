@@ -39,28 +39,10 @@ volatile unsigned long timer0_overflow_count = 0;
 volatile unsigned long timer0_millis = 0;
 static unsigned char timer0_fract = 0;
 
-#if defined(TIM0_OVF_vect)
-ISR(TIM0_OVF_vect)
-#else
-ISR(TIMER0_OVF_vect)
-#endif
-{
-	// copy these to local variables so they can be stored in registers
-	// (volatile variables must be read from memory on every access)
-	unsigned long m = timer0_millis;
-	unsigned char f = timer0_fract;
-
-	m += MILLIS_INC;
-	f += FRACT_INC;
-	if (f >= FRACT_MAX) {
-		f -= FRACT_MAX;
-		m += 1;
-	}
-
-	timer0_fract = f;
-	timer0_millis = m;
-	timer0_overflow_count++;
-}
+// As of Prusa Firmware 3.8 we need to disable the Arduino's hardcoded TIMER0_OVF_vect
+// to be able to replace it with our own implementation for HW PWM heatbed control.
+// That's also the one and only reason we need to define our own "board"
+// for the Arduino IDE.
 
 unsigned long millis()
 {
