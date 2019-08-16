@@ -12,12 +12,12 @@
         {
           "name": "Prusa3D AVR Boards",
           "architecture": "avr",
-          "version": "1.0.0",
+          "version": "1.0.1",
           "category": "Contributed",
-          "url": "https://github.com/deliopoulos/prusa3d-avr-boards/releases/download/v1.0.0/prusa3d-1.0.0.tar.bz2",
-          "archiveFileName": "prusa3d-1.0.0.tar.bz2",
-          "checksum": "SHA-256:1be3f437aeb811b5a87aaf7e831402d45acaee975ada009422710448efa6c5d4",
-          "size": "42614",
+          "url": "https://github.com/deliopoulos/prusa3d-avr-boards/releases/download/v1.0.1/prusa3d-1.0.1.tar.bz2",
+          "archiveFileName": "prusa3d-1.0.1.tar.bz2",
+          "checksum": "SHA-256:81241b80a8e0c56ecd85768989fb4238b0922d7b2b70ee2425bf26c4cdaf20c9",
+          "size": "90815",
           "boards": [
             {"name": "Prusa MM Control Board"},
             {"name": "Einsy Rambo"}
